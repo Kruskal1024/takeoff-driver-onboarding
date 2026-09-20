@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-mist-200;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-paper text-ink-800 font-body antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink-900;
+  }
+
+  /* Visible, deliberate keyboard focus — never suppressed */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(226, 166, 59, 0.45);
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
